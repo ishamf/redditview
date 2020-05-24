@@ -1,20 +1,23 @@
 <script>
-  import { createDemoStore, getDemoStore } from './store/demo'
+  import { createListingStore, loadListing, getListing } from './store/listing'
+  import { createPostStore } from './store/post'
 
-  createDemoStore()
+  import Post from './components/Post.svelte'
 
-  const { text } = getDemoStore()
+  createListingStore()
+  createPostStore()
+
+  let posts = getListing({ type: 'hot' })
+
+  loadListing({ type: 'hot' })
 </script>
 
 <main>
-  <h1>Hello {$text}!</h1>
-  <p>
-    Visit the
-    <a href="https://svelte.dev/tutorial">Svelte tutorial</a>
-    to learn how to build Svelte apps.
-  </p>
+  <h1>Reddit</h1>
 
-  <input bind:value={$text} />
+  {#each $posts as post}
+    <Post name={post} />
+  {/each}
 </main>
 
 <style>
@@ -23,13 +26,6 @@
     padding: 1em;
     max-width: 240px;
     margin: 0 auto;
-  }
-
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4em;
-    font-weight: 100;
   }
 
   @media (min-width: 640px) {
