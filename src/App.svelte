@@ -7,9 +7,9 @@
   createListingStore()
   createPostStore()
 
-  let posts = getListing({ type: 'hot' })
+  let posts = getListing({ type: 'best' })
 
-  loadListing({ type: 'hot' })
+  loadListing({ type: 'best' })
 </script>
 
 <main>
@@ -28,7 +28,7 @@
   }
 
   :global(:root) {
-    background-color: #e4edf4;
+    background-color: #f3f3f3;
 
     --primary-color: #4d9de0;
     --secondary-color: #bcc4db;
