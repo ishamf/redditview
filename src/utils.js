@@ -19,3 +19,7 @@ export function createStore(getter, setter) {
     set: setter,
   }
 }
+
+export function formatLargeNumber(x) {
+  return Math.abs(x) >= 1000 ? `${(x / 1000).toFixed(1)}k` : x
+}

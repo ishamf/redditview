@@ -16,21 +16,24 @@
   <h1>Reddit</h1>
 
   {#each $posts as post}
-    <Post name={post} />
+    <Post name={post} showSub />
   {/each}
 </main>
 
 <style>
   main {
-    text-align: center;
     padding: 1em;
-    max-width: 240px;
+    max-width: 640px;
     margin: 0 auto;
   }
 
-  @media (min-width: 640px) {
-    main {
-      max-width: none;
-    }
+  :global(:root) {
+    background-color: #e4edf4;
+
+    --primary-color: #4d9de0;
+    --secondary-color: #bcc4db;
+    color: #2d3142;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 </style>
