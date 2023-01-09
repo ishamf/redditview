@@ -29,7 +29,7 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
-    "luxon": "^1.24.1",
+    "luxon": "^2.5.2",
     "mobx": "^5.15.4",
     "mobx-utils": "^5.5.7",
     "sirv-cli": "^0.4.4",
